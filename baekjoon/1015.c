@@ -15,18 +15,28 @@ int main(void)
 {
     int n = 0;
     int temp = 0;
-    int A[1000];
-    int C[1000];
+    int A[50];
+    int C[50];
+    int result[50] = {0,};
     scanf("%d",&n);
     for(int i = 0; i<n;i++){
         scanf("%d",&temp);
         A[i] = temp;
         C[i] = temp;
     }
-    int P[n];
 
-    qsort(A,3,sizeof(int),compare);
-            
+    qsort(A,n,sizeof(int),compare);
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(C[i] == A[j]){
+                printf("%d ",j + result[j]);
+                result[j]++;
+                break;
+            }
+                
+        }
+    }
+     
 
     printf("\n");
     return 0;
