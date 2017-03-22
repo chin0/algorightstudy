@@ -45,6 +45,7 @@ int count_prime_number(ull tri_number)
 int main(void)
 {
     ull n = 2;
+    int count = 0;
     for(;;)
     {
         ull temp = get_tri_number(n);
@@ -52,10 +53,12 @@ int main(void)
         if(prime_count >= 500)
         {
             cout << temp << endl;
-            return 0;
+            break;
         }
         n++;
+        count++;
     }
+    cout << count << endl;
 }
 
 

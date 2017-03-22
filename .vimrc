@@ -1,8 +1,10 @@
 "sic Settings
+filetype on
 colorscheme CodeSchool3
 set termguicolors
 syntax on
 set number
+set smartindent
 set relativenumber
 set hlsearch
 set ignorecase
@@ -37,7 +39,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'The-NERD-Tree'
+Plugin 'cscope.vim'
+Plugin 'taglist.vim'
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'Source-Explorer-srcexpl.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -57,12 +62,28 @@ filetype plugin indent on    " required
 let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
 let g:airline_theme='hybrid'
 let g:airline_powerline_fonts = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/parallels/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 "To avoid conflict snippets
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:NERDChristmasTree = 1 "colorful
+let g:NERDTreeAutoCenter = 1
+let g:NERDTreeChDirMode = 1
+let g:NERDTreeSortOrder=['\.c$','\.cpp$','\.h$','*']
+let g:NERDTreeWinSize = 20
+let g:NERDTreeWinPos = "left"
+let g:SrcExpl_winHeight = 9
+let g:SrcExpl_refreshTime =100
+let g:SrcExpl_jumpKey = "<ENTER>"
+let g:SrcExpl_gobackKey = "<SPACE>"
+let g:SrcExpl_isUpdateTags = 0
+
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_Inc_Winwidth = 0
+let Tlist_Exit_OnlyWindow = 0
+let Tlist_Auto_Open = 0
+let Tlist_Use_Right_Window = 1
 
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
@@ -82,5 +103,15 @@ nnoremap <silent> <Leader>_ :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>} :exe "vertical resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>{ :exe "vertical resize " . (winheight(0) * 2/3)<CR>
 "set shortcut
-map <C-N> :NERDTree<CR>
+nmap <F8> :TlistToggle<CR>
+nmap <F7> :NERDTree<CR>
 map <ESC> :nohl<CR>
+nmap <C-H> <C-W>h 
+nmap <C-J> <C-W>j 
+nmap <C-K> <C-W>k 
+nmap <C-L> <C-W>l 
+nmap <C-D> :vsplit<CR>
+nmap <C-F> :sp<CR>
+nmap <C-N> :new
+
+
