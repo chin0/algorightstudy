@@ -1,25 +1,48 @@
 #include <iostream>
 #include <cstring>
-
+#include "Bank.h"
 #define MAX 10
 
 using namespace std;
 
-typedef struct member
+account::account(int id = 0, int money = 0; char *name=NULL) : id(id),money(moeny)
 {
-    int id;
-    int remain;
-    char name[100];
-} member;
+    this->name = new char[strlen(name) + 1];
+    strcpy(this->name, name);
+}
+account::~account()
+{
+    delete name[];
+}
 
-member user[100];
-int accnum;
+account::int withdraw(int money)
+{
+    if(this->money < moeny)
+        return 0;
+    this->money -= money;
+    return money;
+}
+    
+account::void deposit(int money)
+{
+    this->money += money;
+}
+
+account::void printInformation()
+{
+    cout << "계좌ID: " << id << endl;
+    cout << "이름 : " << name << endl;
+    cout << "잔액 : " << money << endl;
+}
+
+account:: int getId(){ return id };
+
+account *user[100];
 void print_menu();
 void bank_join();
 void bank_deposit();
 void bank_withdraw();
 void bank_printmem();
-void (*funclist[4])() = {bank_join,bank_deposit,bank_withdraw,bank_printmem};
 
 int main(void)
 {
