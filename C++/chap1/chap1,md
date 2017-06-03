@@ -1,0 +1,69 @@
+# chapter 1 정리
+
+### function overloading
+- 같은 이름으로 함수를 선언할수있음.
+- 물론 조건이 있음
+    - 인자의 개수가 같을시: 자료형이 달라야함.
+    - 인자의 개수가 다르면 오버로딩 가능.
+
+```
+int a(int b);
+int a(char b); //매개변수의 자료형이 다르므로 성립.
+int a(int b, int c) //매개변수의 자료형이 같지만, 개수가 다르므로 성립.
+//void a(int b); 리턴변수는 해당되지않음
+```
+
+- 매개변수에 default값을 줄수있음
+    - `int func(int b=5)`
+- 오른쪽의 매개변수부터 채워가면서(?) 지정해야함.
+    - `int func(int a,int b=5,int c=10)`
+    - `//int func(int a, int b=5, int c) 오른쪽부터 채워야함`
+- 인라인함수
+    - 매크로변수와 기본적으로 동일하지만 아래와 같은 차이점이 있다.
+        - 매크로의 정의보다 편리하다.
+    - 매크로함수와 동일한 장점
+        - 실행속도의 이점이 있다.(코드를 '대체'하기때문)
+    - 매크로변수만이 가진 장점
+        - 자료형 독립적이지 않다.
+        - 탬플릿으로 해결가능.
+    - inline 키워드를 함수선언 맨 앞에 붙이면된다.
+        - `inline int func(int a)`
+
+### Namespace
+
+- 특정 영역에 이름을 붙여주기 위한 문법적 요소.
+- 이름의 충돌문제를 해결하기위해 사용.
+
+```
+namespace space
+{
+    //funcs and global variable or enum,structures...
+    void func(int a)
+    {
+        //adsfasfasdf
+    }
+
+    void func2(int b);
+}
+
+void space::func2(int a) //선언과 구현 분리가능.
+{
+    //implemation
+}
+
+int main(void)
+{
+    space::func(5);
+}
+```
+네임스페이스도 중복 가능하다.
+
+using을 이용해서 space::부분을 생략할수있다.
+
+`using namespace space`
+
+중첩때문에 이름이
+
+`AAA::BBB::CCC a = 50`과 같이 길어졌을경우 별명을 줄수있다.
+
+`namespace ABC=AAA::BBB::CCC`
