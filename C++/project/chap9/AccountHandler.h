@@ -1,5 +1,9 @@
-#ifndef __ACCOUN_HANDLER_H__
-#define __ACCOUN_HANDLER_H__
+//
+// Created by kafuuchin0 on 04.06.17.
+//
+
+#ifndef CHAP9_ACCOUNTHANDLER_H
+#define CHAP9_ACCOUNTHANDLER_H
 
 #include "Account.h"
 
@@ -10,15 +14,17 @@ private:
     int accNum;
 public:
     AccountHandler();
-    void ShowMenu(void) const;
-    void MakeAccount(void);
-    void DepositMoney(void);
-    void WithdrawMoney(void);
+    void ShowMenu() const;
+    void MakeAccount();
+    void DepositMoney();
+    void WithdrawMoney();
     void ShowAllAccInfo(void) const;
     ~AccountHandler();
+
 protected:
     void MakeNormalAccount(void);
     void MakeCreditAccount(void);
 };
-#endif
 
+
+#endif //CHAP9_ACCOUNTHANDLER_H

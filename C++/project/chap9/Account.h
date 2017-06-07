@@ -1,10 +1,14 @@
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+//
+// Created by kafuuchin0 on 04.06.17.
+//
 
-class Account
-{
+#ifndef CHAP9_ACCOUNT_H
+#define CHAP9_ACCOUNT_H
+
+
+class Account {
 private:
-    int accID;
+    int accId;
     int balance;
     char *cusName;
 public:
@@ -17,4 +21,6 @@ public:
     void ShowAccInfo() const;
     ~Account();
 };
-#endif
+
+
+#endif //CHAP9_ACCOUNT_H
