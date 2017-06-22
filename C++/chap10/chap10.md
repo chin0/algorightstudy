@@ -91,3 +91,23 @@ int operator+(const int num1, const int num2)
 - PointMultipleOperation.cpp참고.
 - 위 예제에서 오버로딩한 * 연산자는 Point객체가 * 연산자의 왼편에 와야한다.
 - 하지만 순서를 바꾸면 교환법칙이 성립이 안된다.(곱셈은 교환법칙이 성립된다.)
+    - 그래서 전역함수 형식으로 순서를 바꿔서 오버로딩을 해준다.
+    - CommuMultipleOperation.cpp
+
+## >>,<<오버로딩.
+```
+int main(void)
+{
+    Point pos(3,4);
+    cout<<pos<<endl;
+    .....
+}
+//위와같은 연산이 가능하도록 오버로딩해보자.
+```
+- IterateConsoleOutput.cpp에서도 보았듯이, cout는 ostream의 객체이다.
+- ostream은 이름공간 std에 선언되어있고, 이를 사용하기 위해서는 iostream을 포함해야한다.
+
+기본적으로 ostream의 <<연산을 멤버함수형태로 오버로딩하려면 ostream객체를 수정해야한다. 이는 불가능하므로(현실적으로) 전역변수 형태로 오버로딩한다.
+
+- PointConsoleOutput.cpp참고.
+- 
