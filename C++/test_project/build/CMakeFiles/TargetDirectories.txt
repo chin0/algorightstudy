@@ -1,0 +1,4 @@
+/home/kafuuchin0/coding/coding_note/C++/test_project/build/CMakeFiles/rebuild_cache.dir
+/home/kafuuchin0/coding/coding_note/C++/test_project/build/CMakeFiles/edit_cache.dir
+/home/kafuuchin0/coding/coding_note/C++/test_project/build/CMakeFiles/hello-vsc.dir
+/home/kafuuchin0/coding/coding_note/C++/test_project/build/CMakeFiles/fuck.dir
